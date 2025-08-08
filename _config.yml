@@ -1,0 +1,15 @@
+title: "Sarkany Studio"
+description: "Stories and board game design by Sándor Sárkány"
+url: ""            # e.g., https://yourdomain.com
+baseurl: ""        # e.g., /portfolio if your site is at a subpath
+permalink: /:collection/:name/
+collections:
+  stories:
+    output: true
+defaults:
+  - scope: { path: "", type: "stories" }
+    values: { layout: story }
+markdown: kramdown
+kramdown:
+  input: GFM
+exclude: [ README.md, Gemfile, Gemfile.lock ]
