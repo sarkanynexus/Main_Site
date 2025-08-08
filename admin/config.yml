@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: sarkanynexus/Main_Site
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME   # <-- change this
   branch: main
   base_url: https://github.com
 media_folder: "assets/uploads"
