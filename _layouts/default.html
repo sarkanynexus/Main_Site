@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} – {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.excerpt | strip_html | default: site.description }}">
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+  
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Homepage">
+      <div class="logo" aria-hidden="true" style="inline-size:36px;block-size:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),color-mix(in oklab,var(--accent),black 30%));display:grid;place-items:center;color:white;font-weight:800">S</div>
+      <span>Sarkany Studio</span>
+    </a>
+    <nav aria-label="Main">
+      <button class="menu-btn" aria-expanded="false" aria-controls="menu" id="menuBtn">≡</button>
+      <div class="menu" id="menu">
+        <a href="{{ '/stories/' | relative_url }}">Stories</a>
+        <a href="{{ '/about/' | relative_url }}">About</a>
+        <a href="{{ '/contact/' | relative_url }}">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+  <main class="wrap">
+    {{ content }}
+  </main>
+  
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <div class="grow">© <span id="year"></span> Sándor Sárkány — All rights reserved.</div>
+      <div class="grow" style="text-align:right">Built with Jekyll + Decap CMS. No cookies.</div>
+    </div>
+  </div>
+</footer>
+<script>
+const btn=document.getElementById('menuBtn'); const menu=document.getElementById('menu');
+btn?.addEventListener('click',()=>{ const open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', String(open)); });
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
