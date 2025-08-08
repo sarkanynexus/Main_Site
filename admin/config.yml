@@ -1,9 +1,6 @@
 backend:
-  name: github
-  repo: sarkanynexus/Main_Site   # <-- change this
+  name: git-gateway
   branch: main
-  base_url: https://github.com
-  app_id: Ov23li4eFMve5bgiG9qk
   
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
