@@ -9,6 +9,8 @@
   --maxw: 1000px;
   --radius: 16px;
   --pad: 18px;
+  --header-h: 56px;   /* site header height */
+  --hero-h: 240px;    /* hero section height */
 }
 
 @media (prefers-color-scheme: light) {
@@ -231,20 +233,26 @@ footer {
   color: var(--muted)
 }
 
-/* Story cover sizing */
-.story-cover{
-  position: relative;      /* creates a local stacking context below header */
-  z-index: 0;
-  margin: 12px 0 18px;
-  overflow: hidden;
-  border-radius: var(--radius);
-  border: 1px solid var(--stroke);
+.story-hero-header{
+  position: sticky;
+  top: var(--header-h);
+  z-index: 9000;
+  background: var(--bg1);
+  padding: 12px;
+  border-bottom: 1px solid var(--stroke);
 }
-.story-cover img{
+
+/* Optional: if you want it to cover full viewport width */
+.story-hero-header figure{
+  margin: 8px 0 0;
+  max-height: var(--hero-h);
+  overflow: hidden;
+}
+.story-hero-header img{
   display: block;
   width: 100%;
-  height: clamp(220px, 40vh, 420px);  /* sensible banner height */
-  object-fit: cover;                   /* crop instead of stretch */
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Give content a little breathing room under the sticky header */

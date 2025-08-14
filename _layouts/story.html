@@ -2,7 +2,7 @@
 layout: default
 ---
 <article>
-  <header class="hero">
+  <header class="story-hero-header">
     <h1>{{ page.title }}</h1>
     <p class="muted">
       {{ page.length | default: "" }}
@@ -10,7 +10,7 @@ layout: default
     </p>
 
     {% if page.cover %}
-    <figure class="story-cover">
+    <figure>
       <img src="{{ page.cover | relative_url }}" alt="{{ page.title }} cover">
     </figure>
     {% endif %}
