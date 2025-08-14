@@ -22,3 +22,27 @@ collections:
       - {label: "Excerpt", name: "excerpt", widget: "text"}
       - {label: "Cover Image", name: "cover", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: updates
+    label: Boardgame Updates
+    folder: "_updates"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime }
+      - { label: Summary, name: excerpt, widget: text }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: projects
+    label: Portfolio
+    folder: "_projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime }
+      - { label: Tags, name: tags, widget: list, default: [] }
+      - { label: Links, name: links, widget: list, field: { label: URL, name: url, widget: string }, required: false }
+      - { label: Cover, name: cover, widget: image, required: false }
+      - { label: Body, name: body, widget: markdown }

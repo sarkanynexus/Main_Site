@@ -1,14 +1,19 @@
-title: "Sarkany Studio"
+title: "Sarkany Nexus"
 description: "Stories and board game design by Sándor Sárkány"
 url: ""            # e.g., https://yourdomain.com
 baseurl: ""        # e.g., /portfolio if your site is at a subpath
 permalink: /:collection/:name/
 collections:
-  stories:
-    output: true
+  stories:   { output: true }
+  updates:   { output: true }   # boardgame devlog
+  projects:  { output: true }   # portfolio items
 defaults:
   - scope: { path: "", type: "stories" }
     values: { layout: story }
+  - scope: { path: "", type: "updates" }
+    values: { layout: update }
+  - scope: { path: "", type: "projects" }
+    values: { layout: project }
 markdown: kramdown
 kramdown:
   input: GFM
