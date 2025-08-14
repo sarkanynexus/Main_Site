@@ -233,25 +233,21 @@ footer {
   color: var(--muted)
 }
 
-.story-hero-header{
-  position: sticky;
-  top: var(--header-h);
-  z-index: 9000;
-  background: var(--bg1);
-  padding: 12px;
-  border-bottom: 1px solid var(--stroke);
+.story-header {
+  margin-bottom: 1.5rem;
 }
 
-/* Optional: if you want it to cover full viewport width */
-.story-hero-header figure{
-  margin: 8px 0 0;
-  max-height: var(--hero-h);
+.story-cover {
+  margin: 0.8rem 0 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--stroke);
   overflow: hidden;
 }
-.story-hero-header img{
+
+.story-cover img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: clamp(220px, 40vh, 420px);
   object-fit: cover;
 }
 
