@@ -4,8 +4,18 @@ layout: default
 <article>
   <header class="hero">
     <h1>{{ page.title }}</h1>
-    <p class="muted">{{ page.length | default: "" }} {% if page.tags %}• {{ page.tags | join: ", " }}{% endif %}</p>
+    <p class="muted">
+      {{ page.length | default: "" }}
+      {% if page.tags %} • {{ page.tags | join: ", " }}{% endif %}
+    </p>
+
+    {% if page.cover %}
+    <figure class="cover">
+      <img src="{{ page.cover | relative_url }}" alt="{{ page.title }} cover">
+    </figure>
+    {% endif %}
   </header>
+
   <section class="box">
     {{ content }}
   </section>
