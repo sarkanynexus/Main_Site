@@ -229,3 +229,23 @@ footer {
   font-size: 12px;
   color: var(--muted)
 }
+
+/* Story cover sizing */
+.story-cover {
+  margin: 8px 0 18px;
+}
+.story-cover img {
+  display: block;
+  width: 100%;
+  max-width: 980px;       /* keeps it reasonable on very wide screens */
+  max-height: 420px;      /* cap the height */
+  aspect-ratio: 16 / 9;   /* keep a nice shape */
+  object-fit: cover;      /* crop instead of stretching */
+  margin-inline: auto;    /* center */
+  border-radius: var(--radius);
+  border: 1px solid var(--stroke);
+}
+
+/* Give content a little breathing room under the sticky header */
+main.wrap { padding-top: 10px; }
+.hero { padding-top: 24px; }  /* was 56px 0 18px; a touch more top space helps */
