@@ -50,7 +50,8 @@ a {
 header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 10000;
+  isolation: isolate;
   backdrop-filter: saturate(180%) blur(8px);
   background: color-mix(in oklab, var(--bg2) 80%, transparent);
   border-bottom: 1px solid var(--stroke);
@@ -231,21 +232,21 @@ footer {
 }
 
 /* Story cover sizing */
-.story-cover {
-  margin: 8px 0 18px;
-}
-.story-cover img {
-  display: block;
-  width: 100%;
-  max-width: 980px;       /* keeps it reasonable on very wide screens */
-  max-height: 420px;      /* cap the height */
-  aspect-ratio: 16 / 9;   /* keep a nice shape */
-  object-fit: cover;      /* crop instead of stretching */
-  margin-inline: auto;    /* center */
+.story-cover{
+  position: relative;      /* creates a local stacking context below header */
+  z-index: 0;
+  margin: 12px 0 18px;
+  overflow: hidden;
   border-radius: var(--radius);
   border: 1px solid var(--stroke);
 }
+.story-cover img{
+  display: block;
+  width: 100%;
+  height: clamp(220px, 40vh, 420px);  /* sensible banner height */
+  object-fit: cover;                   /* crop instead of stretch */
+}
 
 /* Give content a little breathing room under the sticky header */
-main.wrap { padding-top: 10px; }
+main.wrap { position: relative; z-index: 0; }
 .hero { padding-top: 24px; }  /* was 56px 0 18px; a touch more top space helps */
