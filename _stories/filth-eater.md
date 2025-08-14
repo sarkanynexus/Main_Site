@@ -7,6 +7,7 @@ tags:
   - ShortStory
 excerpt: Pursued through the woods and accused of being a monster, Jachum still
   wants to solve the situation peacefully, but can he?
+cover: /assets/uploads/matured_plate.png
 ---
 
 
