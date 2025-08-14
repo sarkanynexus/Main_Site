@@ -4,7 +4,6 @@ title: "Home"
 ---
 <section class="hero">
   <h1>Hi, I’m Sándor.<br/>I write stories and design board games.</h1>
-  <p>Jekyll + Markdown + Decap CMS starter. Add stories from /admin.</p>
   <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap">
     <a class="btn" href="{{ '/stories/' | relative_url }}">Read stories</a>
   </div>
