@@ -243,6 +243,7 @@ footer {
 
 .story-header {
   margin-bottom: 1.5rem;
+  position: static;
 }
 
 .story-cover {

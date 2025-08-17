@@ -19,6 +19,7 @@
     <nav aria-label="Main">
       <button class="menu-btn" aria-expanded="false" aria-controls="menu" id="menuBtn">≡</button>
       <div class="menu" id="menu">
+        <a href="{{ '/' | relative_url }}">Home</a>
         <a href="{{ '/stories/' | relative_url }}">Stories</a>
         <a href="{{ '/about/' | relative_url }}">About</a>
         <a href="{{ '/contact/' | relative_url }}">Contact</a>
@@ -35,7 +36,6 @@
   <div class="wrap">
     <div class="row">
       <div class="grow">© <span id="year"></span> Sándor Sárkány — All rights reserved.</div>
-      <div class="grow" style="text-align:right">Built with Jekyll + Decap CMS. No cookies.</div>
     </div>
   </div>
 </footer>
