@@ -233,6 +233,14 @@ footer {
   color: var(--muted)
 }
 
+.story-box {
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  padding: var(--pad);
+  width: 100%;
+}
+
 .story-header {
   margin-bottom: 1.5rem;
 }
@@ -247,8 +255,6 @@ footer {
 .story-cover img {
   display: block;
   width: 100%;
-  height: clamp(220px, 40vh, 420px);
-  object-fit: cover;
 }
 
 /* Give content a little breathing room under the sticky header */
