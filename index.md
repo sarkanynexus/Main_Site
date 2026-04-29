@@ -55,7 +55,9 @@ title: "Home"
       <div class="body">
         <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
         <p class="muted">{% if p.tags %}{{ p.tags | join: ", " }}{% endif %}</p>
-        <p>{{ p.excerpt }}</p>
+        {% if p.excerpt %}
+          <p>{{ p.excerpt }}</p>
+        {% endif %}
         <p><a class="btn" href="{{ p.url | relative_url }}">Open</a></p>
       </div>
     </article>

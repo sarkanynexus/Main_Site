@@ -1,6 +1,7 @@
 backend:
   name: git-gateway
   branch: main
+  repo: sarkanynexus/Main_Site
   
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
@@ -42,6 +43,7 @@ collections:
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Date, name: date, widget: datetime }
+      - { label: Excerpt, name: excerpt, widget: text }
       - { label: Tags, name: tags, widget: list, default: [] }
       - { label: Links, name: links, widget: list, field: { label: URL, name: url, widget: string }, required: false }
       - { label: Cover, name: cover, widget: image, required: false }
