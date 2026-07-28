@@ -3,9 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.title %}{{ page.title }} – {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{{ page.excerpt | strip_html | default: site.description }}">
+  {% capture page_title %}{% if page.title %}{{ page.title }} – {{ site.title }}{% else %}{{ site.title }}{% endif %}{% endcapture %}
+  {% capture page_description %}{% if page.excerpt and page.excerpt != blank %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
+  {% if page.cover %}
+    {% assign og_image = page.cover | absolute_url %}
+  {% else %}
+    {% assign og_image = "/assets/favicon/android-chrome-512x512.png" | absolute_url %}
+  {% endif %}
+  {% if page.collection == "stories" or page.collection == "updates" or page.collection == "projects" %}
+    {% assign og_type = "article" %}
+  {% else %}
+    {% assign og_type = "website" %}
+  {% endif %}
+  <title>{{ page_title | strip }}</title>
+  <meta name="description" content="{{ page_description | strip | xml_escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  <!-- Open Graph: preview card when the link is shared (Facebook, Discord, Slack, etc.) -->
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ page_title | strip | xml_escape }}">
+  <meta property="og:description" content="{{ page_description | strip | xml_escape }}">
+  <meta property="og:type" content="{{ og_type }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page_title | strip | xml_escape }}">
+  <meta name="twitter:description" content="{{ page_description | strip | xml_escape }}">
+  <meta name="twitter:image" content="{{ og_image }}">
+
   <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#06080c">
+  <link rel="icon" href="{{ '/assets/favicon/favicon.ico' | relative_url }}" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon/favicon-32x32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/favicon/favicon-16x16.png' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicon/apple-touch-icon.png' | relative_url }}">
+  <link rel="manifest" href="{{ '/assets/favicon/site.webmanifest' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">

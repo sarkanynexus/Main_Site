@@ -1,6 +1,6 @@
 title: "Sarkany Nexus"
 description: "Dark fantasy fiction, boardgame design, and maker projects by Sándor Sárkány"
-url: ""            # e.g., https://yourdomain.com
+url: "https://sarkanynexus.com"            # e.g., https://yourdomain.com
 baseurl: ""        # e.g., /portfolio if your site is at a subpath
 permalink: /:collection/:name/
 
@@ -22,4 +22,15 @@ defaults:
 markdown: kramdown
 kramdown:
   input: GFM
-exclude: [ README.md, Gemfile, Gemfile.lock ]
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - AGENTS.md
+  - docs
+  - .agents
+  - .cursor
+  - vendor
+  - node_modules
+

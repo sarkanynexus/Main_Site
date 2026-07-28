@@ -1,0 +1,17 @@
+# Build output & caches
+_site/
+.jekyll-cache/
+.sass-cache/
+.bundle/
+vendor/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Secrets / local env (never commit)
+.env
+.env.*
+!.env.example

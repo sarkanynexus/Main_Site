@@ -4,6 +4,8 @@ Personal site for stories, boardgame design updates, and portfolio work.
 
 **Stack:** Jekyll (static site) · Markdown content · Decap CMS · Netlify (build + host + Identity) · domain via GoDaddy
 
+**Rights:** Site content and brand assets are **All rights reserved** — see `LICENSE`. Do not treat this repo as open-source content to republish.
+
 ---
 
 ## How it works
@@ -72,12 +74,13 @@ Editorial workflow is enabled: drafts can go through Netlify’s CMS review flow
 
 ## Deploy
 
-Netlify builds from the GitHub repo on every push to `main`. Typical build settings:
+Netlify reads `netlify.toml` on every push to `main`:
 
 - **Build command:** `jekyll build`
 - **Publish directory:** `_site`
+- **Environment:** `JEKYLL_ENV=production`
 
-(Or use Netlify’s Jekyll preset if offered.)
+You do not need to set those again in the Netlify UI unless you want to override them.
 
 ---
 
