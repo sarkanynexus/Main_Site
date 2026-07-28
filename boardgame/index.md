@@ -9,7 +9,7 @@ title: "Boardgame Updates"
 
 <section>
   <div class="grid">
-    {% assign updates = site.updates | sort: "date" | reverse %}
+    {% assign updates = site.updates | where_exp: "item", "item.published != false" | sort: "date" | reverse %}
     {% for u in updates %}
       <article class="card">
         <div class="thumb" aria-hidden="true"></div>
@@ -25,4 +25,3 @@ title: "Boardgame Updates"
     {% endfor %}
   </div>
 </section>
-

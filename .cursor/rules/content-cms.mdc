@@ -1,0 +1,32 @@
+---
+description: Content and Decap CMS conventions — publish flags, front matter, admin config.
+globs: _stories/**/*.md,_updates/**/*.md,_projects/**/*.md,admin/**/*
+alwaysApply: false
+---
+
+# Content & CMS
+
+## Publish switch
+
+```yaml
+published: false   # hidden from site, kept in repo
+published: true    # public (default)
+```
+
+Never delete a piece to "take it offline." Toggle `published` in CMS or front matter.
+
+## Front matter must stay CMS-compatible
+
+Field names in Markdown must match `admin/config.yml` (`title`, `date`, `tags`, `excerpt`, `cover`, `body`, `published`, etc.). Renaming a CMS field without migrating files breaks editing.
+
+## Safe CMS edits
+
+- Do not remove collections or rename `folder:` paths without a migration plan
+- Keep `media_folder` / `public_folder` aligned with `assets/uploads`
+- `editorial_workflow` is intentional; do not disable unless asked
+- Cover paths look like `/assets/uploads/filename.ext`
+
+## Body content
+
+- Write in Markdown (GFM via kramdown)
+- Do not paste secrets, private emails of others, or unpublished manuscripts the user did not request to publish

@@ -3,6 +3,14 @@ layout: default
 title: "Home"
 ---
 
+{% if site.coming_soon %}
+<section class="hero coming-soon">
+  <h1>Sarkany Nexus</h1>
+  <p>Coming soon.</p>
+  <p class="muted">Stories, boardgame design, and portfolio — on the way.</p>
+  <p><a class="btn" href="mailto:info@sarkanynexus.com">Get in touch</a></p>
+</section>
+{% else %}
 <section class="hero">
   <h1>Sarkany Nexus</h1>
   <p>Stories, boardgame design updates, and portfolio.</p>
@@ -11,7 +19,7 @@ title: "Home"
 <section>
   <h2>Latest Stories</h2>
   <div class="grid">
-  {% assign latest_stories = site.stories | sort: 'date' | reverse | slice: 0, 3 %}
+  {% assign latest_stories = site.stories | where_exp: "item", "item.published != false" | sort: "date" | reverse | slice: 0, 3 %}
   {% for story in latest_stories %}
     <article class="card">
       {% if story.cover %}
@@ -32,7 +40,7 @@ title: "Home"
 
 <section>
   <h2>Boardgame Updates</h2>
-  {% assign latest_updates = site.updates | sort: 'date' | reverse | slice: 0, 3 %}
+  {% assign latest_updates = site.updates | where_exp: "item", "item.published != false" | sort: "date" | reverse | slice: 0, 3 %}
   <ul>
     {% for u in latest_updates %}
       <li><a href="{{ u.url | relative_url }}">{{ u.title }}</a> — <span class="muted">{{ u.date | date: "%Y-%m-%d" }}</span></li>
@@ -44,7 +52,7 @@ title: "Home"
 <section>
   <h2>Recent Projects</h2>
   <div class="grid">
-  {% assign latest_projects = site.projects | sort: 'date' | reverse | slice: 0, 3 %}
+  {% assign latest_projects = site.projects | where_exp: "item", "item.published != false" | sort: "date" | reverse | slice: 0, 3 %}
   {% for p in latest_projects %}
     <article class="card">
       {% if p.cover %}
@@ -64,3 +72,4 @@ title: "Home"
   {% endfor %}
   </div>
 </section>
+{% endif %}

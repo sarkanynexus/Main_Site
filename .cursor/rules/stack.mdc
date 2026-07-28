@@ -1,0 +1,27 @@
+---
+description: Jekyll/Decap stack conventions for Sarkany Nexus. Always apply.
+alwaysApply: true
+---
+
+# Stack conventions
+
+## Architecture
+
+- Static site only: Jekyll builds Markdown + Liquid → `_site`
+- Collections: `stories`, `updates`, `projects` (see `_config.yml`)
+- CMS: Decap at `/admin` with `git-gateway` on `main`
+- Hosting: Netlify builds from GitHub; do not assume GitHub Pages
+
+## Content rules
+
+- New public content must include front matter compatible with `admin/config.yml`
+- Listings must exclude unpublished docs, e.g. `where_exp: "item", "item.published != false"`
+- Defaults already set `published: true` — set `false` to hide
+- Uploads go under `assets/uploads/`; reference as `/assets/uploads/...`
+
+## File discipline
+
+- Layouts in `_layouts/`; shared chrome only in `default.html`
+- One stylesheet: `assets/style.css` (CSS variables in `:root`)
+- Keep README accurate if workflow/hosting docs change
+- Do not add `node_modules`, React, or a second CSS framework unless asked

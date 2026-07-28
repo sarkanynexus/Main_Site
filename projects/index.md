@@ -9,7 +9,7 @@ title: "Projects"
 
 <section>
   <div class="grid">
-    {% assign projects = site.projects | sort: "date" | reverse %}
+    {% assign projects = site.projects | where_exp: "item", "item.published != false" | sort: "date" | reverse %}
     {% for p in projects %}
       <article class="card">
         {% if p.cover %}
@@ -29,4 +29,3 @@ title: "Projects"
     {% endfor %}
   </div>
 </section>
-

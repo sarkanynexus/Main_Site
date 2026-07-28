@@ -1,0 +1,31 @@
+---
+description: Professional visual/PR quality for public-facing pages and styles.
+globs: assets/style.css,_layouts/**/*.html,index.md,about/**/*.md,contact/**/*.md,stories/**/*.md,boardgame/**/*.md,projects/**/*.md
+alwaysApply: false
+---
+
+# Design & public presentation
+
+This site represents an author / creator brand. First impressions matter (e.g. book launch). Aim for calm confidence, not startup-template energy.
+
+## Brand & hierarchy
+
+- **Brand first:** "Sarkany Nexus" should read as the hero signal on marketing surfaces; headlines must not overpower the brand
+- **One job per section:** one purpose, one headline, short supporting copy
+- **Hero budget:** brand, one line of promise, optional single CTA — no stat strips, chip clusters, or promo clutter in the first viewport
+- Prefer full-bleed or atmospheric backgrounds over flat single-color slabs
+
+## Look & feel
+
+- Define and reuse CSS variables; extend `:root` in `assets/style.css`
+- Avoid AI-default looks: purple-on-white gradients, generic Inter-only UI chrome, terracotta-on-cream, dense "newspaper" grids, glow spam, emoji decoration
+- Prefer distinctive typography over default system/Inter-only stacks when redesigning
+- Cards: only when they aid scanning a list of works; never card-ify the hero
+- Motion: 2–3 intentional touches max; no noisy animation
+
+## Quality bar
+
+- Desktop and mobile both must feel finished
+- Images: compress; prefer WebP/JPEG over huge PNGs; always set meaningful `alt`
+- Coming-soon mode must still look intentional (not an unfinished scaffold)
+- Copy: specific and human — avoid "Blooming", "Welcome to my website", lorem, filler

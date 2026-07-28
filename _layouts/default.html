@@ -20,10 +20,12 @@
       <button class="menu-btn" aria-expanded="false" aria-controls="menu" id="menuBtn">≡</button>
       <div class="menu" id="menu">
         <a href="{{ '/' | relative_url }}">Home</a>
+        {% unless site.coming_soon %}
         <a href="{{ '/stories/' | relative_url }}">Stories</a>
         <a href="{{ '/boardgame/' | relative_url }}">Boardgame</a>
         <a href="{{ '/projects/' | relative_url }}">Projects</a>
         <a href="{{ '/about/' | relative_url }}">About</a>
+        {% endunless %}
         <a href="{{ '/contact/' | relative_url }}">Contact</a>
       </div>
     </nav>

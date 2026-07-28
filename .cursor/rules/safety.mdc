@@ -1,0 +1,32 @@
+---
+description: Safety-first constraints for vibe-coding Sarkany Nexus. Always apply.
+alwaysApply: true
+---
+
+# Safety first
+
+This is a live personal brand site. Prefer reversible, minimal changes.
+
+## Hard stops — ask the user first
+
+- Changing stack (leave Jekyll/Decap/Netlify) or adding a heavy framework
+- Deleting stories, uploads, or CMS collections (use `published: false` instead)
+- Force-push, history rewrite, or skipping git hooks
+- Committing secrets, `.env`, API keys, Netlify/GitHub tokens
+- Setting `coming_soon: false` or flipping many items to published (going live)
+- Changing domain, DNS, or Netlify Identity / Git Gateway settings via code guesses
+
+## Always do
+
+- Prefer **edit** over rewrite; match existing file layout and naming
+- Keep unpublished work with `published: false` — do not remove files to "clean up"
+- Preserve `admin/config.yml` field names used by existing Markdown front matter
+- After structural or Liquid changes, sanity-check that listings filter unpublished items
+- Do not invent new build tooling unless asked
+
+## Never do
+
+- Put secrets in the repo or in client-side JS
+- Add remote scripts / trackers without an explicit ask
+- Break `/admin` login (Netlify Identity widget + Decap)
+- Commit large binary churn unless the user asked for that asset

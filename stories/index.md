@@ -10,7 +10,7 @@ title: "Stories"
 
 <section>
   <div class="grid">
-    {% assign sorted = site.stories | sort: 'date' | reverse %}
+    {% assign sorted = site.stories | where_exp: "item", "item.published != false" | sort: "date" | reverse %}
     {% for story in sorted %}
     <article class="card">
       {% if story.cover %}

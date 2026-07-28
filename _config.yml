@@ -3,17 +3,22 @@ description: "Stories and board game design by Sándor Sárkány"
 url: ""            # e.g., https://yourdomain.com
 baseurl: ""        # e.g., /portfolio if your site is at a subpath
 permalink: /:collection/:name/
+
+# When true, the public site shows a simple coming-soon page (nav links hidden).
+# Set to false when you are ready to go live with content.
+coming_soon: true
+
 collections:
   stories:   { output: true }
   updates:   { output: true }   # boardgame devlog
   projects:  { output: true }   # portfolio items
 defaults:
   - scope: { path: "", type: "stories" }
-    values: { layout: story }
+    values: { layout: story, published: true }
   - scope: { path: "", type: "updates" }
-    values: { layout: update }
+    values: { layout: update, published: true }
   - scope: { path: "", type: "projects" }
-    values: { layout: project }
+    values: { layout: project, published: true }
 markdown: kramdown
 kramdown:
   input: GFM
