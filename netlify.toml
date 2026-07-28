@@ -2,11 +2,9 @@
 # You usually don't need to change this — Netlify reads it on every deploy.
 
 [build]
-  command = "jekyll build"
+  command = "bundle exec jekyll build"
   publish = "_site"
-
-# Ignore editor / agent files from affecting publish output
-# (Jekyll exclude in _config.yml already keeps them out of _site)
 
 [build.environment]
   JEKYLL_ENV = "production"
+  RUBY_VERSION = "3.3.6"

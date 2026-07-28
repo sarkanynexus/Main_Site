@@ -76,8 +76,9 @@ Editorial workflow is enabled: drafts can go through Netlify’s CMS review flow
 
 Netlify reads `netlify.toml` on every push to `main`:
 
-- **Build command:** `jekyll build`
+- **Build command:** `bundle exec jekyll build`
 - **Publish directory:** `_site`
+- **Ruby:** `3.3.6` (via `RUBY_VERSION` and `.ruby-version`)
 - **Environment:** `JEKYLL_ENV=production`
 
 You do not need to set those again in the Netlify UI unless you want to override them.
