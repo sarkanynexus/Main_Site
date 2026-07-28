@@ -3,11 +3,12 @@ layout: default
 title: "Projects"
 ---
 <section class="hero">
+  <span class="hero-rule" aria-hidden="true"></span>
   <h1>Projects</h1>
-  <p class="muted">Portfolio items.</p>
+  <p class="lede">Builds, experiments, and artifacts worth keeping on the map.</p>
 </section>
 
-<section>
+<section class="section">
   <div class="grid">
     {% assign projects = site.projects | where_exp: "item", "item.published != false" | sort: "date" | reverse %}
     {% for p in projects %}
@@ -23,7 +24,7 @@ title: "Projects"
           {% if p.excerpt %}
             <p>{{ p.excerpt }}</p>
           {% endif %}
-          <p><a class="btn" href="{{ p.url | relative_url }}">Open</a></p>
+          <p><a class="btn btn-ghost" href="{{ p.url | relative_url }}">Open</a></p>
         </div>
       </article>
     {% endfor %}

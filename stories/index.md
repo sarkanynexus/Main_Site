@@ -4,11 +4,12 @@ title: "Stories"
 ---
 
 <section class="hero">
+  <span class="hero-rule" aria-hidden="true"></span>
   <h1>Stories</h1>
-  <p class="muted">All published pieces.</p>
+  <p class="lede">Short fiction and longer shadows from the archive.</p>
 </section>
 
-<section>
+<section class="section">
   <div class="grid">
     {% assign sorted = site.stories | where_exp: "item", "item.published != false" | sort: "date" | reverse %}
     {% for story in sorted %}
@@ -25,7 +26,7 @@ title: "Stories"
           {% for t in story.tags %}<span class="tag">{{ t }}</span>{% endfor %}
         </div>
         <p>{{ story.excerpt }}</p>
-        <p><a class="btn" href="{{ story.url | relative_url }}">Read</a></p>
+        <p><a class="btn btn-ghost" href="{{ story.url | relative_url }}">Read</a></p>
       </div>
     </article>
     {% endfor %}

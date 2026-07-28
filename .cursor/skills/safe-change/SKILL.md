@@ -19,6 +19,9 @@ Use this before non-trivial edits on this repo.
 
 - [ ] No secrets will be committed
 - [ ] Prefer `published: false` over deleting content
+- [ ] Copyright / "All rights reserved" (and any license notices) left intact unless asked
+- [ ] No third-party text, images, fonts, or brands added without clear rights to use them
+- [ ] No fake endorsements, illegal distribution, or consent-gated trackers without asking
 - [ ] CMS field names stay compatible with existing front matter
 - [ ] Unpublished filter still used in any new listing loops
 - [ ] `/admin` Identity + Decap scripts left intact unless asked
@@ -33,6 +36,7 @@ Use this before non-trivial edits on this repo.
 
 - Summarize what became public vs still hidden
 - Call out anything that needs a Netlify redeploy or CMS re-login
+- Flag any new third-party asset and its license if relevant
 - Do not push or commit unless the user asked
 
 ## 5. Rollback mental model
@@ -42,3 +46,4 @@ Use this before non-trivial edits on this repo.
 | Published too early | Set `published: false`, push |
 | Site too empty/public | Toggle `coming_soon` |
 | Bad CMS field rename | Restore `admin/config.yml` + front matter |
+| Rights-unclear asset added | Remove it; ask before replacing |

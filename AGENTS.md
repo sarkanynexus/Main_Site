@@ -4,7 +4,7 @@ Personal static site (Jekyll + Decap CMS + Netlify). Vibe-code freely, but **saf
 
 ## Priorities (in order)
 
-1. **Safety** — never break deploys, never leak secrets, never delete content casually, never rewrite the stack without an explicit ask.
+1. **Safety** — protect the owner's work and rights; stay legally compliant; never break deploys; never leak secrets; never delete content casually; never rewrite the stack without an explicit ask.
 2. **Presentation** — the public site must look intentional and professional (book / author / brand quality, not a template).
 3. **Consistency** — follow existing folders, CMS fields, layouts, and CSS variables.
 

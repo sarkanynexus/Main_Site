@@ -3,11 +3,12 @@ layout: default
 title: "Boardgame Updates"
 ---
 <section class="hero">
-  <h1>Boardgame Updates</h1>
-  <p class="muted">Boardgame design notes and devlogs.</p>
+  <span class="hero-rule" aria-hidden="true"></span>
+  <h1>Boardgame</h1>
+  <p class="lede">Design notes, playtest scars, and rules that refuse to sit still.</p>
 </section>
 
-<section>
+<section class="section">
   <div class="grid">
     {% assign updates = site.updates | where_exp: "item", "item.published != false" | sort: "date" | reverse %}
     {% for u in updates %}
@@ -19,7 +20,7 @@ title: "Boardgame Updates"
           {% if u.excerpt %}
             <p>{{ u.excerpt }}</p>
           {% endif %}
-          <p><a class="btn" href="{{ u.url | relative_url }}">Read</a></p>
+          <p><a class="btn btn-ghost" href="{{ u.url | relative_url }}">Read</a></p>
         </div>
       </article>
     {% endfor %}

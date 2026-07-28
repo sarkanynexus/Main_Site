@@ -6,6 +6,7 @@ alwaysApply: true
 # Safety first
 
 This is a live personal brand site. Prefer reversible, minimal changes.
+Safety includes **protecting the owner's work, rights, and creations**, and **staying legally compliant**.
 
 ## Hard stops — ask the user first
 
@@ -15,16 +16,37 @@ This is a live personal brand site. Prefer reversible, minimal changes.
 - Committing secrets, `.env`, API keys, Netlify/GitHub tokens
 - Setting `coming_soon: false` or flipping many items to published (going live)
 - Changing domain, DNS, or Netlify Identity / Git Gateway settings via code guesses
+- Removing or weakening copyright notices, licenses, or attribution the owner relies on
+- Publishing or rewriting manuscripts/art the user did not explicitly ask to put public
+
+## Protect the owner's work
+
+- Treat stories, art, uploads, boardgame notes, and brand copy as **the owner's IP**
+- Prefer `published: false` over deleting; never "clean up" creative files casually
+- Do not strip © / "All rights reserved" / license text from layouts or footers unless asked
+- Do not republish, move off-repo, or open-license the owner's content without an explicit ask
+- Keep drafts and unpublished pieces out of public listings and built pages
+
+## Legal & compliance — never do
+
+- Add copyrighted text, images, fonts, music, or trademarks the owner does not have rights to use
+- Hotlink or embed third-party assets in ways that violate their terms
+- Invent fake credentials, endorsements, reviews, or "as seen in" claims
+- Add trackers, analytics, ads, or email capture that may need consent without asking first
+- Scrape, copy, or closely imitate another author's protected world/brand as site content
+- Advise or implement anything meant to evade law (piracy, fraud, illegal distribution)
+
+When unsure about rights or legality: **stop and ask the user** instead of guessing.
 
 ## Always do
 
 - Prefer **edit** over rewrite; match existing file layout and naming
-- Keep unpublished work with `published: false` — do not remove files to "clean up"
 - Preserve `admin/config.yml` field names used by existing Markdown front matter
 - After structural or Liquid changes, sanity-check that listings filter unpublished items
+- Prefer fonts/assets with clear licenses (e.g. Google Fonts OFL) when adding new ones
 - Do not invent new build tooling unless asked
 
-## Never do
+## Never do (ops)
 
 - Put secrets in the repo or in client-side JS
 - Add remote scripts / trackers without an explicit ask

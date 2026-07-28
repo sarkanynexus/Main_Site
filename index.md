@@ -4,20 +4,31 @@ title: "Home"
 ---
 
 {% if site.coming_soon %}
-<section class="hero coming-soon">
-  <h1>Sarkany Nexus</h1>
-  <p>Coming soon.</p>
-  <p class="muted">Stories, boardgame design, and portfolio — on the way.</p>
-  <p><a class="btn" href="mailto:info@sarkanynexus.com">Get in touch</a></p>
+<section class="hero-plane" aria-label="Sarkany Nexus">
+  <div class="hero-atmos" aria-hidden="true"></div>
+  <div class="hero-copy">
+    <span class="hero-rule" aria-hidden="true"></span>
+    <h1 class="brand-title">Sarkany Nexus</h1>
+    <p class="promise">Stories, tabletop worlds, and strange inventions — assembling.</p>
+    <p><a class="btn" href="mailto:info@sarkanynexus.com">Signal us</a></p>
+  </div>
 </section>
 {% else %}
-<section class="hero">
-  <h1>Sarkany Nexus</h1>
-  <p>Stories, boardgame design updates, and portfolio.</p>
+<section class="hero-plane" aria-label="Sarkany Nexus">
+  <div class="hero-atmos" aria-hidden="true"></div>
+  <div class="hero-copy">
+    <span class="hero-rule" aria-hidden="true"></span>
+    <h1 class="brand-title">Sarkany Nexus</h1>
+    <p class="promise">Dark fantasy fiction, boardgame design, and maker projects from one orbit.</p>
+    <p><a class="btn" href="{{ '/stories/' | relative_url }}">Enter the archive</a></p>
+  </div>
 </section>
 
-<section>
-  <h2>Latest Stories</h2>
+<section class="section">
+  <div class="section-head">
+    <h2>Latest stories</h2>
+    <a class="muted" href="{{ '/stories/' | relative_url }}">All stories</a>
+  </div>
   <div class="grid">
   {% assign latest_stories = site.stories | where_exp: "item", "item.published != false" | sort: "date" | reverse | slice: 0, 3 %}
   {% for story in latest_stories %}
@@ -31,26 +42,34 @@ title: "Home"
         <h3><a href="{{ story.url | relative_url }}">{{ story.title }}</a></h3>
         <p class="muted">{{ story.length }} {% if story.tags %}• {{ story.tags | join: ", " }}{% endif %}</p>
         <p>{{ story.excerpt }}</p>
-        <p><a class="btn" href="{{ story.url | relative_url }}">Read</a></p>
+        <p><a class="btn btn-ghost" href="{{ story.url | relative_url }}">Read</a></p>
       </div>
     </article>
   {% endfor %}
   </div>
 </section>
 
-<section>
-  <h2>Boardgame Updates</h2>
+<section class="section">
+  <div class="section-head">
+    <h2>Boardgame updates</h2>
+    <a class="muted" href="{{ '/boardgame/' | relative_url }}">All updates</a>
+  </div>
   {% assign latest_updates = site.updates | where_exp: "item", "item.published != false" | sort: "date" | reverse | slice: 0, 3 %}
-  <ul>
+  <ul class="update-list">
     {% for u in latest_updates %}
-      <li><a href="{{ u.url | relative_url }}">{{ u.title }}</a> — <span class="muted">{{ u.date | date: "%Y-%m-%d" }}</span></li>
+      <li>
+        <a href="{{ u.url | relative_url }}">{{ u.title }}</a>
+        <span class="muted">{{ u.date | date: "%Y-%m-%d" }}</span>
+      </li>
     {% endfor %}
   </ul>
-  <p><a class="btn" href="{{ '/boardgame/' | relative_url }}">All updates</a></p>
 </section>
 
-<section>
-  <h2>Recent Projects</h2>
+<section class="section">
+  <div class="section-head">
+    <h2>Projects</h2>
+    <a class="muted" href="{{ '/projects/' | relative_url }}">All projects</a>
+  </div>
   <div class="grid">
   {% assign latest_projects = site.projects | where_exp: "item", "item.published != false" | sort: "date" | reverse | slice: 0, 3 %}
   {% for p in latest_projects %}
@@ -66,7 +85,7 @@ title: "Home"
         {% if p.excerpt %}
           <p>{{ p.excerpt }}</p>
         {% endif %}
-        <p><a class="btn" href="{{ p.url | relative_url }}">Open</a></p>
+        <p><a class="btn btn-ghost" href="{{ p.url | relative_url }}">Open</a></p>
       </div>
     </article>
   {% endfor %}

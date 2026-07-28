@@ -27,5 +27,7 @@ This site represents an author / creator brand. First impressions matter (e.g. b
 
 - Desktop and mobile both must feel finished
 - Images: compress; prefer WebP/JPEG over huge PNGs; always set meaningful `alt`
-- Coming-soon mode must still look intentional (not an unfinished scaffold)
+- Only use images/fonts/icons the owner has rights to (original, licensed, or clearly free for this use)
+- Coming-soon mode must still feel intentional (not an unfinished scaffold)
 - Copy: specific and human — avoid "Blooming", "Welcome to my website", lorem, filler
+- Keep footer copyright / rights language unless the user asks to change it

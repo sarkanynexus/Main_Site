@@ -5,19 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} – {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ page.excerpt | strip_html | default: site.description }}">
-  <meta name="color-scheme" content="light dark">
+  <meta name="color-scheme" content="dark light">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
-<body>
-  
-<header>
+<body{% if site.coming_soon and page.url == '/' %} class="coming-soon-mode"{% endif %}>
+
+<header class="site-header">
   <div class="wrap nav">
-    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Homepage">
-      <div class="logo" aria-hidden="true" style="inline-size:36px;block-size:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),color-mix(in oklab,var(--accent),black 30%));display:grid;place-items:center;color:white;font-weight:800">S</div>
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Sarkany Nexus home">
+      <span class="logo" aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="18.5" stroke="currentColor" stroke-opacity="0.35"/>
+          <circle cx="20" cy="20" r="11" stroke="var(--accent)" stroke-width="1.25"/>
+          <path d="M20 4.5 L20 35.5 M4.5 20 L35.5 20" stroke="var(--accent-2)" stroke-width="1" stroke-opacity="0.85"/>
+          <circle cx="20" cy="20" r="2.5" fill="var(--accent)"/>
+          <circle cx="20" cy="9" r="1.5" fill="currentColor" fill-opacity="0.7"/>
+          <circle cx="31" cy="20" r="1.5" fill="currentColor" fill-opacity="0.7"/>
+          <circle cx="20" cy="31" r="1.5" fill="currentColor" fill-opacity="0.7"/>
+          <circle cx="9" cy="20" r="1.5" fill="currentColor" fill-opacity="0.7"/>
+        </svg>
+      </span>
       <span>Sarkany Nexus</span>
     </a>
     <nav aria-label="Main">
-      <button class="menu-btn" aria-expanded="false" aria-controls="menu" id="menuBtn">≡</button>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" id="menuBtn" aria-label="Open menu">☰</button>
       <div class="menu" id="menu">
         <a href="{{ '/' | relative_url }}">Home</a>
         {% unless site.coming_soon %}
@@ -32,20 +45,25 @@
   </div>
 </header>
 
-  <main class="wrap">
-    {{ content }}
-  </main>
-  
-<footer>
+<main class="wrap">
+  {{ content }}
+</main>
+
+<footer class="site-footer">
   <div class="wrap">
     <div class="row">
-      <div class="grow">© <span id="year"></span> Sarkany Nexus — All rights reserved.</div>
+      <div class="grow">© <span id="year"></span> <span class="brand-word">Sarkany Nexus</span> — All rights reserved.</div>
     </div>
   </div>
 </footer>
+
 <script>
-const btn=document.getElementById('menuBtn'); const menu=document.getElementById('menu');
-btn?.addEventListener('click',()=>{ const open=menu.classList.toggle('open'); btn.setAttribute('aria-expanded', String(open)); });
+const btn = document.getElementById('menuBtn');
+const menu = document.getElementById('menu');
+btn?.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded', String(open));
+});
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>

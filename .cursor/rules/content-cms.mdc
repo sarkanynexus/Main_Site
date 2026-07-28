@@ -30,3 +30,5 @@ Field names in Markdown must match `admin/config.yml` (`title`, `date`, `tags`, 
 
 - Write in Markdown (GFM via kramdown)
 - Do not paste secrets, private emails of others, or unpublished manuscripts the user did not request to publish
+- Do not insert copyrighted third-party prose, art, or lore the owner does not have rights to use
+- Preserve the owner's voice and original work; do not silently replace their writing with generic filler
