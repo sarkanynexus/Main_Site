@@ -8,6 +8,25 @@ permalink: /:collection/:name/
 # Set to false when you are ready to go live with content.
 coming_soon: true
 
+# Social profile links (icons in footer + Contact). Leave url empty to hide.
+# Supported icons: x, instagram, youtube, facebook, linkedin, discord, github, tiktok, bluesky, email
+social:
+  - name: Email
+    icon: email
+    url: "mailto:info@sarkanynexus.com"
+  - name: Instagram
+    icon: instagram
+    url: "https://instagram.com/sarkanynexus"
+  - name: X (Twitter)
+    icon: x
+    url: "https://x.com/sarkanynexus"
+  - name: YouTube
+    icon: youtube
+    url: "https://youtube.com/@sarkanynexus"
+  # - name: Discord
+  #   icon: discord
+  #   url: "https://discord.gg/yourinvite"
+
 collections:
   stories:   { output: true }
   updates:   { output: true }   # boardgame devlog
